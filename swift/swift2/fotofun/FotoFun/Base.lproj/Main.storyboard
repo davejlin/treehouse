@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aoc-1R-U16">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Foto Fun Collection View Controller-->
+        <scene sceneID="aeB-2b-v4f">
+            <objects>
+                <collectionViewController id="XXs-3A-CKQ" customClass="FotoFunCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kme-3o-Hb1">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="2" id="Uz4-cA-GxZ">
+                            <size key="itemSize" width="120" height="120"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FotoFunCell" id="fZ4-kQ-1ed" customClass="FotoFunCollectionViewCell">
+                                <rect key="frame" x="2" y="2" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BvG-tr-S4L">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="photoView" destination="BvG-tr-S4L" id="x5x-9M-AZf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="XXs-3A-CKQ" id="FnL-Pp-r0e"/>
+                            <outlet property="delegate" destination="XXs-3A-CKQ" id="t1f-Zu-BXz"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="aYB-cg-Da0"/>
+                    <connections>
+                        <segue destination="4Tw-Ej-NFY" kind="presentation" identifier="showDetail" modalPresentationStyle="overCurrentContext" id="WP2-GJ-HGD"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7c-yT-NyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304" y="418"/>
+        </scene>
+        <!--Foto Fun Detail View Controller-->
+        <scene sceneID="Taj-Jw-77v">
+            <objects>
+                <viewController id="4Tw-Ej-NFY" customClass="FotoFunDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zvf-un-0FR"/>
+                        <viewControllerLayoutGuide type="bottom" id="lg5-Qa-2NN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ldT-0i-cC0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58a-m4-AsA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bg5-kv-Qvn">
+                                <rect key="frame" x="150" y="60" width="300" height="400"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glH-82-93m">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="325"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0X-tS-2oK">
+                                        <rect key="frame" x="248" y="349" width="30" height="30"/>
+                                        <state key="normal" title="Button" image="tipsIcon.png"/>
+                                        <connections>
+                                            <action selector="presentTipView" destination="4Tw-Ej-NFY" eventType="touchUpInside" id="y6t-B1-f1q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bg5-kv-Qvn" firstAttribute="centerX" secondItem="ldT-0i-cC0" secondAttribute="centerX" id="j2e-St-fQr"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="58a-m4-AsA" id="LVY-2X-rH2"/>
+                        <outlet property="centerView" destination="Bg5-kv-Qvn" id="ANj-Vk-oSu"/>
+                        <outlet property="imageView" destination="glH-82-93m" id="ecr-VH-vNE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dap-g3-Bhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304" y="1297"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7TX-6w-h9u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aoc-1R-U16" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="2NZ-T7-2in">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.97254901960784312" green="0.58039215686274503" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Arial-BoldItalicMT" family="Arial" pointSize="20"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XXs-3A-CKQ" kind="relationship" relationship="rootViewController" id="Wr7-ac-v4f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PfU-PD-YOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tipsIcon.png" width="300" height="300"/>
+    </resources>
+</document>

@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1853CC721DCD243500495936 /* FotoFunCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853CC711DCD243500495936 /* FotoFunCollectionViewController.m */; };
+		1853CC751DCD295200495936 /* FotoFunCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853CC741DCD295200495936 /* FotoFunCollectionViewCell.m */; };
+		1853CC771DCD2AE800495936 /* aurora.png in Resources */ = {isa = PBXBuildFile; fileRef = 1853CC761DCD2AE800495936 /* aurora.png */; };
+		1889FB081DCD2068003C8606 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1889FB071DCD2068003C8606 /* main.m */; };
+		1889FB0B1DCD2068003C8606 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1889FB0A1DCD2068003C8606 /* AppDelegate.m */; };
+		1889FB111DCD2068003C8606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1889FB0F1DCD2068003C8606 /* Main.storyboard */; };
+		1889FB131DCD2068003C8606 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1889FB121DCD2068003C8606 /* Assets.xcassets */; };
+		1889FB161DCD2068003C8606 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1889FB141DCD2068003C8606 /* LaunchScreen.storyboard */; };
+		18B3A9AF1DCE574400DCE4DC /* FotoFunPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B3A9AE1DCE574400DCE4DC /* FotoFunPhotoController.m */; };
+		18B3A9B21DCE5B5100DCE4DC /* FotoFunDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B3A9B11DCE5B5100DCE4DC /* FotoFunDetailViewController.m */; };
+		18B3A9B41DCE5ED600DCE4DC /* tipsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B3A9B31DCE5ED600DCE4DC /* tipsIcon.png */; };
+		6F45CF995D09E4488890779B /* Pods_FotoFun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B825330F2835E811B4B31A9 /* Pods_FotoFun.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1853CC701DCD243500495936 /* FotoFunCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotoFunCollectionViewController.h; sourceTree = "<group>"; };
+		1853CC711DCD243500495936 /* FotoFunCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotoFunCollectionViewController.m; sourceTree = "<group>"; };
+		1853CC731DCD295200495936 /* FotoFunCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotoFunCollectionViewCell.h; sourceTree = "<group>"; };
+		1853CC741DCD295200495936 /* FotoFunCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotoFunCollectionViewCell.m; sourceTree = "<group>"; };
+		1853CC761DCD2AE800495936 /* aurora.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aurora.png; sourceTree = "<group>"; };
+		1889FB031DCD2068003C8606 /* FotoFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotoFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1889FB071DCD2068003C8606 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1889FB091DCD2068003C8606 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1889FB0A1DCD2068003C8606 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1889FB101DCD2068003C8606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1889FB121DCD2068003C8606 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1889FB151DCD2068003C8606 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1889FB171DCD2068003C8606 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B3A9AD1DCE574400DCE4DC /* FotoFunPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotoFunPhotoController.h; sourceTree = "<group>"; };
+		18B3A9AE1DCE574400DCE4DC /* FotoFunPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotoFunPhotoController.m; sourceTree = "<group>"; };
+		18B3A9B01DCE5B5100DCE4DC /* FotoFunDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotoFunDetailViewController.h; sourceTree = "<group>"; };
+		18B3A9B11DCE5B5100DCE4DC /* FotoFunDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotoFunDetailViewController.m; sourceTree = "<group>"; };
+		18B3A9B31DCE5ED600DCE4DC /* tipsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipsIcon.png; sourceTree = "<group>"; };
+		1CF44250F150061711EABC4B /* Pods-FotoFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FotoFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FotoFun/Pods-FotoFun.debug.xcconfig"; sourceTree = "<group>"; };
+		6B825330F2835E811B4B31A9 /* Pods_FotoFun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FotoFun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		924135066D077395991CE3ED /* Pods-FotoFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FotoFun.release.xcconfig"; path = "Pods/Target Support Files/Pods-FotoFun/Pods-FotoFun.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1889FB001DCD2068003C8606 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F45CF995D09E4488890779B /* Pods_FotoFun.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1889FAFA1DCD2068003C8606 = {
+			isa = PBXGroup;
+			children = (
+				1889FB051DCD2068003C8606 /* FotoFun */,
+				1889FB041DCD2068003C8606 /* Products */,
+				7DB7C35097FFC423CCBE3437 /* Pods */,
+				22C3BD38D8EFB32DDEDB5D60 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1889FB041DCD2068003C8606 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1889FB031DCD2068003C8606 /* FotoFun.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1889FB051DCD2068003C8606 /* FotoFun */ = {
+			isa = PBXGroup;
+			children = (
+				1853CC761DCD2AE800495936 /* aurora.png */,
+				18B3A9B31DCE5ED600DCE4DC /* tipsIcon.png */,
+				1889FB091DCD2068003C8606 /* AppDelegate.h */,
+				1889FB0A1DCD2068003C8606 /* AppDelegate.m */,
+				1853CC701DCD243500495936 /* FotoFunCollectionViewController.h */,
+				1853CC711DCD243500495936 /* FotoFunCollectionViewController.m */,
+				1853CC731DCD295200495936 /* FotoFunCollectionViewCell.h */,
+				1853CC741DCD295200495936 /* FotoFunCollectionViewCell.m */,
+				18B3A9AD1DCE574400DCE4DC /* FotoFunPhotoController.h */,
+				18B3A9AE1DCE574400DCE4DC /* FotoFunPhotoController.m */,
+				18B3A9B01DCE5B5100DCE4DC /* FotoFunDetailViewController.h */,
+				18B3A9B11DCE5B5100DCE4DC /* FotoFunDetailViewController.m */,
+				1889FB0F1DCD2068003C8606 /* Main.storyboard */,
+				1889FB121DCD2068003C8606 /* Assets.xcassets */,
+				1889FB141DCD2068003C8606 /* LaunchScreen.storyboard */,
+				1889FB171DCD2068003C8606 /* Info.plist */,
+				1889FB061DCD2068003C8606 /* Supporting Files */,
+			);
+			path = FotoFun;
+			sourceTree = "<group>";
+		};
+		1889FB061DCD2068003C8606 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1889FB071DCD2068003C8606 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22C3BD38D8EFB32DDEDB5D60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B825330F2835E811B4B31A9 /* Pods_FotoFun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB7C35097FFC423CCBE3437 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CF44250F150061711EABC4B /* Pods-FotoFun.debug.xcconfig */,
+				924135066D077395991CE3ED /* Pods-FotoFun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1889FB021DCD2068003C8606 /* FotoFun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1889FB1A1DCD2068003C8606 /* Build configuration list for PBXNativeTarget "FotoFun" */;
+			buildPhases = (
+				E271EF707ADE26E7DB7E32C4 /* [CP] Check Pods Manifest.lock */,
+				1889FAFF1DCD2068003C8606 /* Sources */,
+				1889FB001DCD2068003C8606 /* Frameworks */,
+				1889FB011DCD2068003C8606 /* Resources */,
+				D03C3D86B520256638A0CB3A /* [CP] Embed Pods Frameworks */,
+				78C6B369DD9235E1C7C5210F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FotoFun;
+			productName = FotoFun;
+			productReference = 1889FB031DCD2068003C8606 /* FotoFun.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1889FAFB1DCD2068003C8606 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Lin David";
+				TargetAttributes = {
+					1889FB021DCD2068003C8606 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 1889FAFE1DCD2068003C8606 /* Build configuration list for PBXProject "FotoFun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1889FAFA1DCD2068003C8606;
+			productRefGroup = 1889FB041DCD2068003C8606 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1889FB021DCD2068003C8606 /* FotoFun */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1889FB011DCD2068003C8606 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B3A9B41DCE5ED600DCE4DC /* tipsIcon.png in Resources */,
+				1889FB161DCD2068003C8606 /* LaunchScreen.storyboard in Resources */,
+				1889FB131DCD2068003C8606 /* Assets.xcassets in Resources */,
+				1889FB111DCD2068003C8606 /* Main.storyboard in Resources */,
+				1853CC771DCD2AE800495936 /* aurora.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		78C6B369DD9235E1C7C5210F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FotoFun/Pods-FotoFun-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D03C3D86B520256638A0CB3A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FotoFun/Pods-FotoFun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E271EF707ADE26E7DB7E32C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1889FAFF1DCD2068003C8606 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1889FB0B1DCD2068003C8606 /* AppDelegate.m in Sources */,
+				1889FB081DCD2068003C8606 /* main.m in Sources */,
+				1853CC751DCD295200495936 /* FotoFunCollectionViewCell.m in Sources */,
+				18B3A9AF1DCE574400DCE4DC /* FotoFunPhotoController.m in Sources */,
+				1853CC721DCD243500495936 /* FotoFunCollectionViewController.m in Sources */,
+				18B3A9B21DCE5B5100DCE4DC /* FotoFunDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1889FB0F1DCD2068003C8606 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1889FB101DCD2068003C8606 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1889FB141DCD2068003C8606 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1889FB151DCD2068003C8606 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1889FB181DCD2068003C8606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1889FB191DCD2068003C8606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1889FB1B1DCD2068003C8606 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CF44250F150061711EABC4B /* Pods-FotoFun.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FotoFun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lin.david.FotoFun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1889FB1C1DCD2068003C8606 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 924135066D077395991CE3ED /* Pods-FotoFun.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FotoFun/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lin.david.FotoFun;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1889FAFE1DCD2068003C8606 /* Build configuration list for PBXProject "FotoFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1889FB181DCD2068003C8606 /* Debug */,
+				1889FB191DCD2068003C8606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1889FB1A1DCD2068003C8606 /* Build configuration list for PBXNativeTarget "FotoFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1889FB1B1DCD2068003C8606 /* Debug */,
+				1889FB1C1DCD2068003C8606 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1889FAFB1DCD2068003C8606 /* Project object */;
+}
