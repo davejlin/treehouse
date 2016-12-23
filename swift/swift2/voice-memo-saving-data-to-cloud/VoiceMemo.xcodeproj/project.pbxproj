@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E724201E0D5FC3006A8532 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7241E1E0D5FC3006A8532 /* Result.swift */; };
+		18E724211E0D5FC3006A8532 /* CloudPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */; };
 		97BD262E1D6CE37F0092DA00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */; };
 		97BD26301D6CE37F0092DA00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD262F1D6CE37F0092DA00 /* ViewController.swift */; };
 		97BD26351D6CE37F0092DA00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97BD26341D6CE37F0092DA00 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E7241E1E0D5FC3006A8532 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPersistenceManager.swift; sourceTree = "<group>"; };
 		97BD262A1D6CE37F0092DA00 /* VoiceMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BD262F1D6CE37F0092DA00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 		97BD262C1D6CE37F0092DA00 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
+				18E7241E1E0D5FC3006A8532 /* Result.swift */,
+				18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */,
 				97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */,
 				97BD262F1D6CE37F0092DA00 /* ViewController.swift */,
 				97BD265B1D6CE7B40092DA00 /* MemoCell.swift */,
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E724201E0D5FC3006A8532 /* Result.swift in Sources */,
 				97BD26301D6CE37F0092DA00 /* ViewController.swift in Sources */,
+				18E724211E0D5FC3006A8532 /* CloudPersistenceManager.swift in Sources */,
 				97BD262E1D6CE37F0092DA00 /* AppDelegate.swift in Sources */,
 				97BD265C1D6CE7B40092DA00 /* MemoCell.swift in Sources */,
 				BEA54E921D7887090011AA36 /* MemoAudio.swift in Sources */,

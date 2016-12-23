@@ -39,6 +39,8 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let persistenceManager = CloudPersistenceManager()
+    
     // MARK: - Audio Properties
     let sessionManager = MemoSessionManager.sharedInstance
     let recorder = MemoRecorder.sharedInstance
@@ -157,7 +159,14 @@ class ViewController: UIViewController {
     }
     
     private func save(memo: Memo) {
-        
+        persistenceManager.save(memo) { result in
+            switch result {
+            case .Success(let memo):
+                print(memo)
+            case .Failure(let error):
+                print(error.description)
+            }
+        }
     }
 }
 

@@ -23,6 +23,31 @@ extension Memo {
     }
 }
 
+extension Memo {
+    var persistableRecord: CKRecord {
+        let record = CKRecord(recordType: Memo.entityName)
+        record.setValue(title, forKey: "title")
+        
+        let asset = CKAsset(fileURL: fileURL)
+        record.setValue(asset, forKey: "recording")
+        
+        return record
+    }
+}
+
+extension Memo {
+    init?(record: CKRecord) {
+        guard let title = record.valueForKey("title") as? String,
+            let asset = record.valueForKey("recording") as? CKAsset else {
+                return nil
+        }
+        
+        self.id = record.recordID
+        self.title = title
+        self.fileURLString = asset.fileURL.absoluteString
+    }
+}
+
 
 
 
