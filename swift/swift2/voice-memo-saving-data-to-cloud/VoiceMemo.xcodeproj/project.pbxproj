@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18E724201E0D5FC3006A8532 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7241E1E0D5FC3006A8532 /* Result.swift */; };
-		18E724211E0D5FC3006A8532 /* CloudPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */; };
 		97BD262E1D6CE37F0092DA00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */; };
 		97BD26301D6CE37F0092DA00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD262F1D6CE37F0092DA00 /* ViewController.swift */; };
 		97BD26351D6CE37F0092DA00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97BD26341D6CE37F0092DA00 /* Assets.xcassets */; };
@@ -18,6 +16,12 @@
 		97BD265C1D6CE7B40092DA00 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD265B1D6CE7B40092DA00 /* MemoCell.swift */; };
 		BEA54E901D7883910011AA36 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E8F1D7883910011AA36 /* Memo.swift */; };
 		BEA54E921D7887090011AA36 /* MemoAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E911D7887090011AA36 /* MemoAudio.swift */; };
+		BEA54E951D7BB6370011AA36 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA54E941D7BB6370011AA36 /* CloudKit.framework */; };
+		BEA54E971D7BBA160011AA36 /* CloudPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E961D7BBA160011AA36 /* CloudPersistenceManager.swift */; };
+		BEA54E991D7BBDF30011AA36 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E981D7BBDF30011AA36 /* Result.swift */; };
+		BEA54E9B1D7D15520011AA36 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E9A1D7D15520011AA36 /* DataProvider.swift */; };
+		BEA54E9D1D7D15960011AA36 /* QueryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E9C1D7D15960011AA36 /* QueryType.swift */; };
+		BEA54E9F1D7E5B4C0011AA36 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA54E9E1D7E5B4C0011AA36 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18E7241E1E0D5FC3006A8532 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPersistenceManager.swift; sourceTree = "<group>"; };
 		97BD262A1D6CE37F0092DA00 /* VoiceMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97BD262F1D6CE37F0092DA00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,13 @@
 		97BD265B1D6CE7B40092DA00 /* MemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		BEA54E8F1D7883910011AA36 /* Memo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
 		BEA54E911D7887090011AA36 /* MemoAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoAudio.swift; sourceTree = "<group>"; };
+		BEA54E931D7BB5F60011AA36 /* VoiceMemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VoiceMemo.entitlements; sourceTree = "<group>"; };
+		BEA54E941D7BB6370011AA36 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		BEA54E961D7BBA160011AA36 /* CloudPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudPersistenceManager.swift; sourceTree = "<group>"; };
+		BEA54E981D7BBDF30011AA36 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BEA54E9A1D7D15520011AA36 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		BEA54E9C1D7D15960011AA36 /* QueryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryType.swift; sourceTree = "<group>"; };
+		BEA54E9E1D7E5B4C0011AA36 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA54E951D7BB6370011AA36 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +95,7 @@
 		97BD26211D6CE37F0092DA00 = {
 			isa = PBXGroup;
 			children = (
+				BEA54E941D7BB6370011AA36 /* CloudKit.framework */,
 				97BD262C1D6CE37F0092DA00 /* VoiceMemo */,
 				97BD26411D6CE37F0092DA00 /* VoiceMemoTests */,
 				97BD264C1D6CE37F0092DA00 /* VoiceMemoUITests */,
@@ -105,8 +116,7 @@
 		97BD262C1D6CE37F0092DA00 /* VoiceMemo */ = {
 			isa = PBXGroup;
 			children = (
-				18E7241E1E0D5FC3006A8532 /* Result.swift */,
-				18E7241F1E0D5FC3006A8532 /* CloudPersistenceManager.swift */,
+				BEA54E931D7BB5F60011AA36 /* VoiceMemo.entitlements */,
 				97BD262D1D6CE37F0092DA00 /* AppDelegate.swift */,
 				97BD262F1D6CE37F0092DA00 /* ViewController.swift */,
 				97BD265B1D6CE7B40092DA00 /* MemoCell.swift */,
@@ -115,6 +125,11 @@
 				97BD26391D6CE37F0092DA00 /* Info.plist */,
 				BEA54E8F1D7883910011AA36 /* Memo.swift */,
 				BEA54E911D7887090011AA36 /* MemoAudio.swift */,
+				BEA54E961D7BBA160011AA36 /* CloudPersistenceManager.swift */,
+				BEA54E981D7BBDF30011AA36 /* Result.swift */,
+				BEA54E9A1D7D15520011AA36 /* DataProvider.swift */,
+				BEA54E9C1D7D15960011AA36 /* QueryType.swift */,
+				BEA54E9E1D7E5B4C0011AA36 /* TableViewDataSource.swift */,
 			);
 			path = VoiceMemo;
 			sourceTree = "<group>";
@@ -205,7 +220,12 @@
 				TargetAttributes = {
 					97BD26291D6CE37F0092DA00 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 4R5QVHEW22;
+						DevelopmentTeam = R9E84DX62H;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					97BD263D1D6CE37F0092DA00 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -268,13 +288,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18E724201E0D5FC3006A8532 /* Result.swift in Sources */,
 				97BD26301D6CE37F0092DA00 /* ViewController.swift in Sources */,
-				18E724211E0D5FC3006A8532 /* CloudPersistenceManager.swift in Sources */,
 				97BD262E1D6CE37F0092DA00 /* AppDelegate.swift in Sources */,
+				BEA54E9B1D7D15520011AA36 /* DataProvider.swift in Sources */,
 				97BD265C1D6CE7B40092DA00 /* MemoCell.swift in Sources */,
 				BEA54E921D7887090011AA36 /* MemoAudio.swift in Sources */,
+				BEA54E991D7BBDF30011AA36 /* Result.swift in Sources */,
+				BEA54E9F1D7E5B4C0011AA36 /* TableViewDataSource.swift in Sources */,
 				BEA54E901D7883910011AA36 /* Memo.swift in Sources */,
+				BEA54E9D1D7D15960011AA36 /* QueryType.swift in Sources */,
+				BEA54E971D7BBA160011AA36 /* CloudPersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,13 +433,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = VoiceMemo/VoiceMemo.entitlements;
 				INFOPLIST_FILE = VoiceMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davejlin.VoiceMemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.VoiceMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,13 +445,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = VoiceMemo/VoiceMemo.entitlements;
 				INFOPLIST_FILE = VoiceMemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.davejlin.VoiceMemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamtreehouse.VoiceMemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

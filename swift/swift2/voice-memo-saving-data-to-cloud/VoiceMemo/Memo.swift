@@ -48,6 +48,12 @@ extension Memo {
     }
 }
 
+extension Memo {
+    var track: NSData? {
+        return NSData(contentsOfURL: fileURL)
+    }
+}
+
 
 
 

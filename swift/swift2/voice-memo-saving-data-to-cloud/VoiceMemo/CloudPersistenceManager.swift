@@ -26,8 +26,8 @@ enum PersistenceError: MemoErrorType {
 }
 
 class CloudPersistenceManager {
-//    let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
-    let privateDatabase = CKContainer(identifier: "iCloud.com.teamtreehouse.VoiceMemos").privateCloudDatabase
+    let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
+//    let privateDatabase = CKContainer(identifier: "iCloud.com.teamtreehouse.VoiceMemos").privateCloudDatabase
     
     func save(memo: Memo, completion: Result<Memo> -> Void) {
         let record = memo.persistableRecord

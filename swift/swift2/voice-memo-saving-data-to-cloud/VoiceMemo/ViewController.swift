@@ -39,15 +39,25 @@ class ViewController: UIViewController {
         return button
     }()
     
-    let persistenceManager = CloudPersistenceManager()
+    lazy var dataSource: TableViewDataSource = {
+        return TableViewDataSource(tableView: self.tableView, results: [])
+    }()
+    
+    lazy var dataProvider: DataProvider = {
+        return DataProvider(delegate: self.dataSource)
+    }()
     
     // MARK: - Audio Properties
     let sessionManager = MemoSessionManager.sharedInstance
     let recorder = MemoRecorder.sharedInstance
+    let player = MemoPlayer.sharedInstance
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tableView.delegate = self
+        
+        dataProvider.performQuery(type: .All)
     }
 
     override func didReceiveMemoryWarning() {
@@ -159,19 +169,19 @@ class ViewController: UIViewController {
     }
     
     private func save(memo: Memo) {
-        persistenceManager.save(memo) { result in
-            switch result {
-            case .Success(let memo):
-                print(memo)
-            case .Failure(let error):
-                print(error.description)
-            }
-        }
+        dataProvider.save(memo)
     }
 }
 
 
-
+extension ViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let memo = dataSource.objectAtIndexPath(indexPath)
+        
+        guard let trackData = memo.track else { fatalError("Cannot play file without the data") }
+        player.play(trackData)
+    }
+}
 
 
 
