@@ -15,12 +15,22 @@
           <tbody>
         {% for taco in tacos %}
             <tr>
-              <!-- taco attributes here -->
+              <td>{{ taco.protein }}</td>
+              <td>{% if taco.cheese %}Yes{% else %}No{% endif %}</td>
+              <td>{{ taco.shell }}</td>
+              <td>{{ taco.extras }}</td>
             </tr>
         {% endfor %}
           </tbody>
         </table>
     {% else %}
-        <!-- message for missing tacos -->
+        <p>Sorry, no tacos yet!</p>
     {% endif %}
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('taco') }}">add a new taco</a>
+    <a href="{{ url_for('logout') }}">log out</a>
+{% else %}
+    <a href="{{ url_for('register') }}">sign up</a>
+    <a href="{{ url_for('login') }}">log in</a>
+{% endif %}
 {% endblock %}
