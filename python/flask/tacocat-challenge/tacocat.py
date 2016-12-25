@@ -82,7 +82,7 @@ def taco():
             protein=form.protein.data.strip(),
             shell=form.shell.data.strip(),
             cheese=form.cheese.data,
-            extras=form.extras.data
+            extras=form.extras.data.strip()
         )
         flash("Taco ordered! Thanks!", "success")
         return redirect(url_for('index'))
