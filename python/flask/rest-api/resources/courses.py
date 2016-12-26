@@ -20,7 +20,7 @@ def add_reviews(course):
 def course_or_404(course_id):
     try:
         course = models.Course.get(models.Course.id==course_id)
-    except:
+    except models.Course.DoesNotExist:
         abort(404)
     else:
         return course
@@ -48,10 +48,11 @@ class CourseList(Resource):
                    for course in models.Course.select()]
         return {'courses': courses}
 
+    @marshal_with(course_fields)
     def post(self):
         args = self.reqparse.parse_args()
-        models.Course.create(**args)
-        return jsonify({'courses': [{'title': 'Python Basics'}]})
+        course = models.Course.create(**args)
+        return add_reviews(course)
 
 class Course(Resource):
     def __init__(self):
