@@ -52,7 +52,8 @@ class CourseList(Resource):
     def post(self):
         args = self.reqparse.parse_args()
         course = models.Course.create(**args)
-        return add_reviews(course)
+        return (add_reviews(course), 201,
+                {'Location': url_for('resources.courses.course', id=course.id)})
 
 class Course(Resource):
     def __init__(self):
@@ -76,11 +77,21 @@ class Course(Resource):
     def get(self, id):
         return add_reviews(course_or_404(id))
 
+    @marshal_with(course_fields)
     def put(self, id):
-        return jsonify({'title': 'Python Basics'})
+        args = self.reqparse.parse_args()
+        course = course_or_404(id)
+        query = course.update(**args)
+        query.execute()
+        course = course_or_404(id)
+        return (course, 200,
+                {'Location': url_for('resources.courses.course', id=id)})
 
     def delete(self, id):
-        return jsonify({'title': 'Python Basics'})
+        course = course_or_404(id)
+        query = course.delete()
+        query.execute()
+        return '', 204, {'Location': url_for('resources.courses.courses')}
 
 courses_api = Blueprint('resources.courses', __name__)
 api = Api(courses_api)

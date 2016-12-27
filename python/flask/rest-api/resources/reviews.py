@@ -59,18 +59,54 @@ class ReviewList(Resource):
     def post(self):
         args = self.reqparse.parse_args()
         review = models.Review.create(**args)
-        return add_course(review)
+        return (add_course(review), 201,
+                {'Location': url_for('resources.reviews.review', id=review.id)})
 
 class Review(Resource):
+    def __init__(self):
+        self.reqparse = reqparse.RequestParser()
+        self.reqparse.add_argument(
+            'course',
+            type=inputs.positive,
+            required=True,
+            help='No course provided',
+            location=['form', 'json']
+        )
+        self.reqparse.add_argument(
+            'rating',
+            type=inputs.int_range(1, 5),
+            required=True,
+            help='No rating provided',
+            location=['form', 'json']
+        )
+        self.reqparse.add_argument(
+            'comment',
+            required=False,
+            nullable=True,
+            location=['form', 'json'],
+            default=''
+        )
+        super().__init__()
+
     @marshal_with(review_fields)
     def get(self, id):
         return add_course(review_or_404(id))
 
+    @marshal_with(review_fields)
     def put(self, id):
-        return jsonify({'course': 1, 'rating': 5})
+        args = self.reqparse.parse_args()
+        review = review_or_404(id)
+        query = review.update(**args)
+        query.execute()
+        review = add_course(review_or_404(id))
+        return (review, 200,
+                {'Location': url_for('resources.reviews.review', id=id)})
 
     def delete(self, id):
-        return jsonify({'course': 1, 'rating': 5})
+        review = review_or_404(id)
+        query = review.delete()
+        query.execute()
+        return '', 204, {'Location': url_for('resoures.reviews.reviews')}
 
 reviews_api = Blueprint('resources.reviews', __name__)
 api = Api(reviews_api)
