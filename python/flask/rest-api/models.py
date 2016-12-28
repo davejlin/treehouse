@@ -25,6 +25,7 @@ class User(Model):
             user = cls(username=username, email=email)
             user.password = User.set_password(password)
             user.save()
+            return user
         else:
             raise Exception("User with that email or username already exists")
 
@@ -48,11 +49,12 @@ class Review(Model):
     rating = IntegerField()
     comment = TextField(default='')
     created_at = DateTimeField(default=datetime.datetime.now)
+    created_by = ForeignKeyField(User, related_name='review_set')
 
     class Meta:
         database = DATABASE
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([Course, Review], safe=True)
+    DATABASE.create_tables([User, Course, Review], safe=True)
     DATABASE.close()
