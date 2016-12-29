@@ -1,5 +1,8 @@
 from flask import Flask, g, jsonify
 
+from flask_limiter import Limiter
+from flask_limiter.util import get_ipaddr
+
 import models
 import config
 
@@ -12,6 +15,15 @@ app = Flask(__name__)
 app.register_blueprint(courses_api)
 app.register_blueprint(reviews_api, url_prefix='/api/v1')
 app.register_blueprint(users_api, url_prefix='/api/v1')
+
+limiter = Limiter(app, global_limits=[config.DEFAULT_RATE], key_func=get_ipaddr)
+limiter.limit("40/day")(users_api)
+limiter.limit(config.GET_RATE, per_method=True, methods=['get'])(courses_api)
+limiter.limit(config.GET_RATE, per_method=True, methods=['get'])(reviews_api)
+limiter.limit(config.DEFAULT_RATE, per_method=True, methods=['post', 'put', 'delete'])(courses_api)
+limiter.limit(config.DEFAULT_RATE, per_method=True, methods=['post', 'put', 'delete'])(reviews_api)
+#limiter.exempt(courses_api)
+#limiter.exempt(reviews_api)
 
 @app.route('/')
 def index():
