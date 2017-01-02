@@ -59,6 +59,7 @@ class CourseViewsTest(TestCase):
                                        kwargs={'pk': self.course.pk}))
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(self.course, resp.context['course'])
+        self.assertTemplateUsed(resp, 'courses/course_detail.html')
 
     def test_step_detail(self):
         resp = self.client.get(reverse('courses:step', kwargs={
@@ -66,3 +67,4 @@ class CourseViewsTest(TestCase):
             'step_pk': self.step.pk}))
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(self.step, resp.context['step'])
+        self.assertTemplateUsed(resp, 'courses/step_detail.html')
