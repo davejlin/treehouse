@@ -51,6 +51,8 @@ class CourseViewsTest(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertIn(self.course, resp.context['courses'])
         self.assertIn(self.course2, resp.context['courses'])
+        self.assertTemplateUsed(resp, 'courses/course_list.html')
+        self.assertContains(resp, self.course.title)
 
     def test_course_detail_view(self):
         resp = self.client.get(reverse('courses:detail',
