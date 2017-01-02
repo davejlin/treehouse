@@ -20,7 +20,7 @@ from . import views
 from courses import views as courses_views
 
 urlpatterns = [
+    url(r'^courses/', include('courses.urls', namespace='courses')),
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.hello_world),
-    url(r'^courses/', include('courses.urls')),
+    url(r'^$', views.hello_world, name='hello_world'),
 ]
