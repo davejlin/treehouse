@@ -1,6 +1,8 @@
 Welcome to Django Karaoke!
 
-We're going to put on a Karaoke party at our next Django conference and we need to prototype an app for it. I've included a basic bit of HTML and some tests but I'll need you to finish up the code in the `songs` app. Thanks for helping out! 
+We're going to put on a Karaoke party at our next Django conference and we need to prototype
+an app for it. I've included a basic bit of HTML and some tests but I'll need you to finish up
+the code in the `songs` app. Thanks for helping out!
 
 Here are some details:
 
@@ -22,7 +24,8 @@ Here are some details:
   * performer view, a particular performer
     * list all of their songs
     
-Feel free to add other features, too, if you want. Like maybe the minutes:seconds version of how long the song is?
+Feel free to add other features, too, if you want.
+Like maybe the minutes:seconds version of how long the song is?
 
 You can check out the tests in songs/tests.py and run them with `python manage.py tests`.
 
