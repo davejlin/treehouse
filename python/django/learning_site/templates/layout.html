@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load course_extras %}
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
@@ -12,6 +13,7 @@
             <a href="{% url 'hello_world' %}">Home</a>
             <a href="{% url 'courses:list' %}">Courses</a>
         </nav>
+            <p>Don't miss our latest course, {% newest_course %}</p>
         {% block content %}{% endblock %}
         </div>
     </body>
