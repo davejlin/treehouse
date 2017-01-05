@@ -9,11 +9,13 @@
     </head>
     <body>
         <div class="site-container">
-        <nav>
-            <a href="{% url 'hello_world' %}">Home</a>
-            <a href="{% url 'courses:list' %}">Courses</a>
-        </nav>
-            <p>Don't miss our latest course, {% newest_course %}</p>
+            <div>{% nav_courses_list %}</div>
+            <nav>
+                <a href="{% url 'hello_world' %}">Home</a>
+                <a href="{% url 'courses:list' %}">Courses</a>
+            </nav>
+            {% newest_course as nc %}
+            <p>Check out our latest course: <a href="{% url 'courses:detail' pk=nc.pk %}">{{ nc }}</a></p>
         {% block content %}{% endblock %}
         </div>
     </body>
