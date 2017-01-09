@@ -1,6 +1,10 @@
 from django import forms
 from django.core import validators
 
+def must_be_empty(value):
+    if value:
+        raise forms.ValidationError('is not empty')
+
 class SuggestionForm(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
@@ -8,5 +12,5 @@ class SuggestionForm(forms.Form):
     honeypot = forms.CharField(required=False,
                                widget=forms.HiddenInput,
                                label="Leave empty",
-                               validators=[validators.MaxLengthValidator(0)]
+                               validators=[must_be_empty]
                                )
