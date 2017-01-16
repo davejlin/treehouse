@@ -110,3 +110,26 @@ def edit_question(request, quiz_pk, question_pk):
         'form': form,
         'quiz': question.quiz
     })
+
+
+@login_required
+def answer_form(request, question_pk, answer_pk=None):
+    question = get_object_or_404(models.Question, pk=question_pk)
+    formset = forms.AnswerFormSet(queryset=question.answer_set.all())
+
+    if request.method == 'POST':
+        formset = forms.AnswerFormSet(request.POST,
+                                      queryset=question.answer_set.all())
+
+        if formset.is_valid():
+            answers = formset.save(commit=False)
+
+            for answer in answers:
+                answer.question = question
+                answer.save()
+            messages.success(request, "Added answers")
+            return HttpResponseRedirect(question.quiz.get_absolute_url())
+    return render(request, 'courses/answer_form.html', {
+        'formset': formset,
+        'question': question
+    })
