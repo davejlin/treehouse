@@ -9,3 +9,5 @@ admin.site.register(models.Quiz)
 admin.site.register(models.MultipleChoiceQuestion)
 admin.site.register(models.TrueFalseQuestion)
 admin.site.register(models.Answer)
+
+admin.site.site_header = "Learning Site administration"
