@@ -45,10 +45,13 @@ class CourseAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
     list_filter = ['created_at', 'published', YearListFilter]
     list_display = ['title', 'created_at', 'published', 'time_to_complete']
+    list_editable = ['published']
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
     search_fields = ['prompt']
+    list_display = ['prompt', 'quiz', 'order']
+    list_editable = ['quiz', 'order']
 
 
 class QuizAdmin(admin.ModelAdmin):
