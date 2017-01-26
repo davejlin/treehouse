@@ -17,10 +17,11 @@ class AnswerInline(admin.StackedInline):
 
 class CourseAdmin(admin.ModelAdmin):
     inlines = [TextInline, QuizInline]
-
+    search_fields = ['title', 'description']
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
+    search_fields = ['prompt']
 
 
 class QuizAdmin(admin.ModelAdmin):
