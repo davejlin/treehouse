@@ -12,7 +12,7 @@ class QuizInline(admin.StackedInline):
     model = models.Quiz
 
 
-class AnswerInline(admin.StackedInline):
+class AnswerInline(admin.TabularInline):
     model = models.Answer
 
 
