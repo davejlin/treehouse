@@ -48,6 +48,12 @@ class CourseAdmin(admin.ModelAdmin):
     list_editable = ['published']
     radio_fields = {'teacher': admin.HORIZONTAL}
 
+    class Media:
+        js = ('js/vendor/markdown.js', 'js/preview.js')
+        css = {
+            'all': ('css/preview.css'),
+        }
+
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
     search_fields = ['prompt']
