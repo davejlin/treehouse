@@ -46,6 +46,7 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ['created_at', 'published', YearListFilter]
     list_display = ['title', 'created_at', 'published', 'time_to_complete']
     list_editable = ['published']
+    radio_fields = {'teacher': admin.HORIZONTAL}
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
