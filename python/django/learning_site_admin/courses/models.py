@@ -3,6 +3,12 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+STATUS_CODES = (
+    ('i', 'In Progress'),
+    ('r', 'In Review'),
+    ('p', 'Published'),
+)
+
 class Course(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
@@ -10,6 +16,7 @@ class Course(models.Model):
     teacher = models.ForeignKey(User)
     subject = models.CharField(default='', max_length=100)
     published = models.BooleanField(default=False)
+    status = models.CharField(max_length=1, choices=STATUS_CODES, default='i')
     
     def __str__(self):
         return self.title
