@@ -3,10 +3,24 @@ from datetime import date
 
 from . import models
 
+
+def make_in_progress(modeladmin, request, queryset):
+    queryset.update(status='i', published=False)
+
+make_in_progress.short_description = 'Mark selected courses in progress'
+
+
+def make_in_review(modeladmin, request, queryset):
+    queryset.update(status='r', published=False)
+
+make_in_review.short_description = 'Mark selected courses as in review'
+
+
 def make_published(modeladmin, request, queryset):
     queryset.update(status='p', published=True)
 
 make_published.short_description = 'Mark selected courses as published'
+
 
 class TextInline(admin.StackedInline):
     model = models.Text
@@ -51,7 +65,7 @@ class CourseAdmin(admin.ModelAdmin):
     list_display = ['title', 'created_at', 'published', 'time_to_complete', 'status']
     list_editable = ['status']
     radio_fields = {'teacher': admin.HORIZONTAL}
-    actions = [make_published]
+    actions = [make_in_progress, make_in_review, make_published]
 
     class Media:
         js = ('js/vendor/markdown.js', 'js/preview.js')

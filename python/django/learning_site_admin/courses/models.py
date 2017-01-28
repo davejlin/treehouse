@@ -25,6 +25,13 @@ class Course(models.Model):
         from courses.templatetags.course_extras import time_estimate
         return '{} min'.format(time_estimate(len(self.description.split())))
 
+    def save(self, force_insert=False, force_update=False):
+        if self.status == 'p':
+            self.published = True
+        else:
+            self.published = False
+        super(Course, self).save(force_insert, force_update)
+
 
 class Step(models.Model):
     title = models.CharField(max_length=255)
