@@ -31,6 +31,11 @@ class TeamCreateView(CreateView):
     model = models.Team
     fields = ('name', 'practice_location', 'coach')
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial["coach"] = self.request.user.pk
+        return initial
+
 
 class TeamUpdateView(UpdateView):
     model = models.Team
@@ -40,3 +45,8 @@ class TeamUpdateView(UpdateView):
 class TeamDeleteView(DeleteView):
     model = models.Team
     success_url = reverse_lazy("teams:list")
+
+    def get_queryset(self):
+        if not self.request.user.is_superuser:
+            return self.model.objects.filter(coach=self.request.user)
+        return self.model.object.all()
