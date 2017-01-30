@@ -23,8 +23,10 @@ class TeamListView(ListView):
     model = models.Team
 
 
-class TeamDetailView(DetailView):
+class TeamDetailView(DetailView, UpdateView):
+    fields = ("name", "practice_location", "coach")
     model = models.Team
+    template_name = "teams/team_detail.html"
 
 
 class TeamCreateView(CreateView):

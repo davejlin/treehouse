@@ -12,6 +12,14 @@
 {% endfor %}
 </ul>
 
+{% if user == team.coach %}
+	<form method='POST'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" class="btn btn-primary" value="Save">
+	</form>
+{% endif %}
+
 <hr>
 <p><a href="{% url 'teams:update' pk=team.pk %}" class="btn">Edit</a>
 <a href="{% url 'teams:delete' pk=team.pk %}" class="btn">Delete</a>
