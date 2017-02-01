@@ -6,7 +6,7 @@ from django.views.generic import (
     CreateView, UpdateView, DeleteView
 )
 
-from . import models
+from . import mixins, models
 
 
 def team_list(request):
@@ -31,9 +31,10 @@ class TeamDetailView(DetailView, UpdateView):
     template_name = "teams/team_detail.html"
 
 
-class TeamCreateView(LoginRequiredMixin, CreateView):
+class TeamCreateView(LoginRequiredMixin, mixins.PageTitleMixin, CreateView):
     model = models.Team
     fields = ('name', 'practice_location', 'coach')
+    page_title = "Create a new team"
 
     def get_initial(self):
         initial = super().get_initial()
@@ -41,9 +42,13 @@ class TeamCreateView(LoginRequiredMixin, CreateView):
         return initial
 
 
-class TeamUpdateView(LoginRequiredMixin, UpdateView):
+class TeamUpdateView(LoginRequiredMixin, mixins.PageTitleMixin, UpdateView):
     model = models.Team
     fields = ('name', 'practice_location', 'coach')
+
+    def get_page_title(self):
+        obj = self.get_object()
+        return "Update {}".format(obj.name)
 
 
 class TeamDeleteView(LoginRequiredMixin, DeleteView):
