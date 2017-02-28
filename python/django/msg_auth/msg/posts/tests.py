@@ -78,7 +78,6 @@ class PostPrivateViews(PostTestCaseBase):
         self.assertEqual(models.Post.objects.count(), 1)
         self.assertEqual(resp.status_code, 200)
 
-    @unittest.expectedFailure
     def test_create_requires_login(self):
         resp = self.client.get(reverse("posts:create"))
         self.assertNotEqual(resp.status_code, 200)
