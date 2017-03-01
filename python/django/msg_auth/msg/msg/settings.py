@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'debug_toolbar',
     'bootstrap3',
+    'accounts',
     'communities',
     'posts',
 ]
@@ -126,3 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets')]
+
+LOGIN_REDIRECT_URL = "posts:all"
