@@ -1,4 +1,4 @@
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.urlresolvers import reverse_lazy
 from django.views import generic
@@ -30,5 +30,13 @@ class LogoutView(generic.RedirectView):
 
 class SignUp(generic.CreateView):
 	form_class = forms.UserCreateForm
-	success_url = reverse_lazy("login")
+	success_url = reverse_lazy("posts:all")
 	template_name = "accounts/signup.html"
+
+	def form_valid(self, form):
+		res = super().form_valid(form)
+		user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password1'])
+		if user is not None:
+			if user.is_active:
+				login(self.request, user)
+		return res
