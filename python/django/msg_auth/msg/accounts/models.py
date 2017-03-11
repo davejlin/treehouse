@@ -60,3 +60,15 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_long_name(self):
         return "{} (@{})".format(self.display_name, self.username)
 
+    def has_perm(self, perm, obj=None):
+        if self.is_staff:
+            return True
+        else:
+            return False
+
+    def has_module_perms(self, app_label):
+        if self.is_staff:
+            return True
+        else:
+            return False
+
