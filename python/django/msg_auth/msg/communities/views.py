@@ -122,7 +122,7 @@ class ChangeStatus(LoginRequiredMixin, PermissionRequiredMixin, generic.Redirect
         except Group.DoesNotExist:
             moderators = Group.objects.create(name="Moderators")
             moderators.permissions.add(
-                Permission.objects.get(codename="ban_members"),
+                Permission.objects.get(codename="ban_members")
             )
 
         if role in [2, 3]:
