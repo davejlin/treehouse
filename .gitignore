@@ -180,12 +180,12 @@ hs_err_pid*
 # IDEA PyCharm
 .idea/
 
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+**/[Ll]ibrary/*
+**/[Tt]emp/*
+**/[Oo]bj/*
+**/[Bb]uild/*
+**/[Bb]uilds/*
+**/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
