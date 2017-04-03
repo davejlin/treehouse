@@ -184,6 +184,7 @@ hs_err_pid*
 **/[Oo]bj/*
 **/[Bb]uild/*
 **/[Bb]uilds/*
+**/[Ll]ibrary/*
 
 # Visual Studio 2015 cache directory
 /.vs/
