@@ -184,7 +184,27 @@ hs_err_pid*
 **/[Oo]bj/*
 **/[Bb]uild/*
 **/[Bb]uilds/*
-**/[Ll]ibrary/*
+
+**/Library/assetDatabase3
+**/Library/AssetServerCacheV3
+**/Library/BuildPlayer.prefs
+**/Library/BuildSettings.asset
+**/Library/EditorSettings.asset
+**/Library/EditorUserBuildSettings.asset
+**/Library/FailedAssetImports.txt
+**/Library/InspectorExpandedItems.asset
+**/Library/MonoManager.asset
+**/Library/QualitySettings.asset
+**/Library/ScriptMapper
+**/Library/ShaderCache
+**/Library/ShaderCache.db
+**/Library/TagManager.asset
+**/Library/cache/
+**/Library/guidmapper
+**/Library/metadata
+**/Library/ScriptAssemblies
+**/Library/expandedItems
+**/Library/previews
 
 # Visual Studio 2015 cache directory
 /.vs/
