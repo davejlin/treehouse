@@ -16,11 +16,17 @@ public class FlySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		totalFlies = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		while (totalFlies < totalFlyMinimum) {
+			totalFlies++;
+			float positionX = Random.Range (-spawnArea, spawnArea);
+			float positionZ = Random.Range (-spawnArea, spawnArea);
+			Vector3 flyPosition = new Vector3 (positionX, 2f, positionZ);
+			Instantiate (flyPrefab, flyPosition, Quaternion.identity);
+		}
 	}
 }

@@ -10,6 +10,7 @@ public class FlyPickup : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.CompareTag ("Player")) {
 			Instantiate (pickupPrefab, transform.position, Quaternion.identity);
+			FlySpawner.totalFlies--;
 			Destroy (gameObject);
 		}
 	}
