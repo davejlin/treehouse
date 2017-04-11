@@ -11,6 +11,7 @@ public class FlyPickup : MonoBehaviour {
 		if (other.CompareTag ("Player")) {
 			Instantiate (pickupPrefab, transform.position, Quaternion.identity);
 			FlySpawner.totalFlies--;
+			ScoreCounter.score++;
 			Destroy (gameObject);
 		}
 	}
