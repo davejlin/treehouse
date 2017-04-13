@@ -7,8 +7,10 @@ public class RandomSoundPlayer : MonoBehaviour {
 	[SerializeField]
 	private List<AudioClip> soundClips = new List<AudioClip>();
 
-	private AudioSource audioSource;
+	[SerializeField]
 	private float soundTimerDelay = 3f;
+
+	private AudioSource audioSource;
 	private float soundTimer;
 
 	// Use this for initialization
