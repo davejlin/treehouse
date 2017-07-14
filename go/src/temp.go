@@ -25,4 +25,30 @@ func main() {
 	var anInt int = 1
 	var aFloat float64 = float64(anInt)
 	fmt.Println(anInt, aFloat)
+
+	myFunction()
+
+	fmt.Println(add(1,2))
+	fmt.Println(subtract(1,2))
+}
+
+func myFunction() {
+	fmt.Println("Running myFunction")
+}
+
+func ExportedFunction() {
+
+}
+
+func unexportedFunction() {
+
+}
+
+func add(a float64, b float64) (sum float64) {
+	return a + b
+}
+
+func subtract(a, b float64) (difference float64) {
+	difference = a - b
+	return
 }
