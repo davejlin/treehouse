@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"math"
 	"welcome"
+	"log"
+	"os"
 )
 
 var myNumber = 1.23
@@ -30,6 +32,27 @@ func main() {
 
 	fmt.Println(add(1,2))
 	fmt.Println(subtract(1,2))
+
+	squareRoot, err := squareRoot(9)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(squareRoot)
+
+	fileInfo, _ := os.Stat("existent.txt")
+	fmt.Println("size of existent.txt = ",fileInfo.Size())
+
+	fileInfo, error := os.Stat("nonexistent.txt")
+	if error != nil {
+		fmt.Println(error)
+	} else {
+		fmt.Println("size of existent.txt = ",fileInfo.Size())
+	}
+
+	for i := 1; i <= 3; i++ {
+		fmt.Println(i)
+	}
+
 }
 
 func myFunction() {
@@ -51,4 +74,11 @@ func add(a float64, b float64) (sum float64) {
 func subtract(a, b float64) (difference float64) {
 	difference = a - b
 	return
+}
+
+func squareRoot(x float64) (float64, error) {
+	if x < 0 {
+		return 0, fmt.Errorf("can't take square root of a negative number")
+	}
+	return math.Sqrt(x), nil
 }
