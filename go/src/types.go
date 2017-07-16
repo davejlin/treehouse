@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Minutes int
 type Hours int
@@ -12,7 +15,22 @@ func main() {
 	minutes := Minutes(1)
 	hours := Hours(2)
 	weight := Weight(145.5)
-	name := Title("The Matrix")
+	name := Title("the matrix")
 	answer := Answer(true)
 	fmt.Println(minutes, hours, weight, name, answer)
+
+	fmt.Println(name.FixCase())
+
+	for i := 1; i <= 3; i++ {
+		minutes.Increment()
+		fmt.Println(minutes)
+	}
+}
+
+func (t Title) FixCase() string {
+	return strings.Title(string(t))
+}
+
+func (m *Minutes) Increment() {
+	*m = (*m + 1) % 60
 }
