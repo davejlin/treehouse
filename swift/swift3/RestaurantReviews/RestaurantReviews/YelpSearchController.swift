@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class YelpSearchController: UIViewController {
     
@@ -14,6 +15,9 @@ class YelpSearchController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     
     let dataSource = YelpSearchResultsDataSource()
     
@@ -72,6 +76,17 @@ class YelpSearchController: UIViewController {
             case .success(let businesses):
                 self?.dataSource.update(with: businesses)
                 self?.tableView.reloadData()
+                
+                let annotations: [MKPointAnnotation] = businesses.map { business in
+                    let point = MKPointAnnotation()
+                    point.coordinate = CLLocationCoordinate2D(latitude: business.location.latitude, longitude: business.location.longitude)
+                    
+                    point.title = business.name
+                    point.subtitle = business.isClosed ? "Closed" : "Open"
+                    return point
+                }
+                
+                self?.mapView.addAnnotations(annotations)
             case .failure(let error):
                 print(error)
             }
@@ -108,16 +123,19 @@ extension YelpSearchController: UITableViewDelegate {
         
         let business = dataSource.object(at: indexPath)
         
-        let operation = YelpBusinessDetailsOperation(business: business, client: self.client)
+        let detailsOperation = YelpBusinessDetailsOperation(business: business, client: self.client)
+        let reviewsOperation = YelpBusinessReviewsOperation(business: business, client: client)
+        reviewsOperation.addDependency(detailsOperation)
         
-        operation.completionBlock = {
+        reviewsOperation.completionBlock = {
             DispatchQueue.main.async {
                 self.dataSource.update(business, at: indexPath)
                 self.performSegue(withIdentifier: "showBusiness", sender: nil)
             }
         }
         
-        queue.addOperation(operation)
+        queue.addOperation(detailsOperation)
+        queue.addOperation(reviewsOperation)
     }
 }
 
@@ -132,6 +150,20 @@ extension YelpSearchController: UISearchResultsUpdating {
                 case .success(let businesses):
                     self?.dataSource.update(with: businesses)
                     self?.tableView.reloadData()
+                    
+                    self?.mapView.removeAnnotations(self!.mapView.annotations)
+                    
+                    let annotations: [MKPointAnnotation] = businesses.map { business in
+                        let point = MKPointAnnotation()
+                        point.coordinate = CLLocationCoordinate2D(latitude: business.location.latitude, longitude: business.location.longitude)
+                        
+                        point.title = business.name
+                        point.subtitle = business.isClosed ? "Closed" : "Open"
+                        return point
+                    }
+                    
+                    self?.mapView.addAnnotations(annotations)
+                    
                 case .failure(let error):
                     print(error)
                 }
@@ -148,6 +180,7 @@ extension YelpSearchController {
                 let business = dataSource.object(at: indexPath)
                 let detailController = segue.destination as! YelpBusinessDetailController
                 detailController.business = business
+                detailController.dataSource.updateData(business.reviews)
             }
         }
     }
@@ -157,7 +190,7 @@ extension YelpSearchController {
 extension YelpSearchController: LocationManagerDelegate {
     func obtainedCoordinates(_ coordinate: Coordinate) {
         self.coordinate = coordinate
-        print(coordinate)
+        adjustMap(with: coordinate)
     }
     
     func failedWithError(_ error: LocationError) {
@@ -165,7 +198,16 @@ extension YelpSearchController: LocationManagerDelegate {
     }
 }
 
-
+// MARK: - MapKit
+extension YelpSearchController {
+    func adjustMap(with coordinate: Coordinate) {
+        let coordinate2D = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        let span = MKCoordinateRegionMakeWithDistance(coordinate2D, 2500, 2500).span
+        let region = MKCoordinateRegion(center: coordinate2D, span: span)
+        mapView.setRegion(region, animated: true)
+    }
+}
 
 
 

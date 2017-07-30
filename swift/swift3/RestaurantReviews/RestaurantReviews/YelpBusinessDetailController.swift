@@ -59,5 +59,25 @@ class YelpBusinessDetailController: UITableViewController {
     func setupTableView() {
         tableView.dataSource = dataSource
         tableView.delegate = self
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
