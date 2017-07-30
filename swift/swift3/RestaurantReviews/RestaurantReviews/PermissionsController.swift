@@ -8,8 +8,9 @@
 
 import UIKit
 import OAuth2
+import CoreLocation
 
-class PermissionsController: UIViewController {
+class PermissionsController: UIViewController, LocationPermissionsDelegate {
     
     let oauth = OAuth2ClientCredentials(settings: [
             "client_id": "MqV3bYw__Dpfmh9Q3ZH6ag",
@@ -17,7 +18,11 @@ class PermissionsController: UIViewController {
             "authorize_uri": "https://api.yelp.com/oauth2/token",
             "secret_in_body": true,
             "keychain": false
-        ])
+    ])
+    
+    lazy var locationManager: LocationManager = {
+        return LocationManager(delegate: nil, permissionsDelegate: self)
+    }()
     
     var isAuthorizedForLocation: Bool
     var isAuthenticatedWithToken: Bool
@@ -73,9 +78,9 @@ class PermissionsController: UIViewController {
         fatalError("init coder not implemented")
     }
     
-    init(isAuthorizedForLocation authorized: Bool, isAuthenticatedWithToken authenticated: Bool) {
-        self.isAuthorizedForLocation = authorized
-        self.isAuthenticatedWithToken = authenticated
+    init(isAuthorizedForLocation locationAuthorization: Bool, isAuthorizedWithToken tokenAuthorization: Bool) {
+        self.isAuthorizedForLocation = locationAuthorization
+        self.isAuthenticatedWithToken = tokenAuthorization
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -116,6 +121,13 @@ class PermissionsController: UIViewController {
     }
     
     func requestLocationPermissions() {
+        do {
+            try locationManager.requestLocationAuthorization()
+        } catch LocationError.disallowedByUser {
+            // Show alert to users
+        } catch let error {
+            print("Location Authorization Error: \(error.localizedDescription)")
+        }
     }
     
     func requestOAuthToken() {
@@ -140,6 +152,16 @@ class PermissionsController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    // MARK: Location Permissions Delegate
+    func authorizationSucceeded() {
+        locationPermissionButton.setTitle("Location Permissions Granted", for: .disabled)
+        locationPermissionButton.isEnabled = false
+    }
+    
+    func authorizationFailedWithStatus(_ status: CLAuthorizationStatus) {
+        //
+    }
+    
 }
 
 

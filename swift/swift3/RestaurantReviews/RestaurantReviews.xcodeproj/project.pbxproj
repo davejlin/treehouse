@@ -29,6 +29,7 @@
 		97D62A131EC2398C007BE0CE /* YelpReviewsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D62A121EC2398C007BE0CE /* YelpReviewsDataSource.swift */; };
 		97D62A151EC239D6007BE0CE /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D62A141EC239D6007BE0CE /* ReviewCell.swift */; };
 		97D62A171EC245BB007BE0CE /* ReviewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D62A161EC245BB007BE0CE /* ReviewCellViewModel.swift */; };
+		BE0CE7371EDDCA8E0075B110 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0CE7361EDDCA8E0075B110 /* LocationManager.swift */; };
 		BEB6351F1ED78090005D7D4D /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB6351E1ED78090005D7D4D /* Locksmith.framework */; };
 		BEE25FFD1ECCEF39007E7F69 /* OAuth2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE25FFC1ECCEF39007E7F69 /* OAuth2.framework */; };
 		BEE260001ECCF4CA007E7F69 /* YelpAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE25FFF1ECCF4CA007E7F69 /* YelpAccount.swift */; };
@@ -59,6 +60,7 @@
 		97D62A121EC2398C007BE0CE /* YelpReviewsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpReviewsDataSource.swift; sourceTree = "<group>"; };
 		97D62A141EC239D6007BE0CE /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		97D62A161EC245BB007BE0CE /* ReviewCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCellViewModel.swift; sourceTree = "<group>"; };
+		BE0CE7361EDDCA8E0075B110 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BEB6351E1ED78090005D7D4D /* Locksmith.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Locksmith.framework; path = Carthage/Build/iOS/Locksmith.framework; sourceTree = "<group>"; };
 		BEE25FFC1ECCEF39007E7F69 /* OAuth2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuth2.framework; path = Carthage/Build/iOS/OAuth2.framework; sourceTree = "<group>"; };
 		BEE25FFF1ECCF4CA007E7F69 /* YelpAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAccount.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				97D62A041EC233D8007BE0CE /* PermissionsController.swift */,
 				BEE25FFF1ECCF4CA007E7F69 /* YelpAccount.swift */,
+				BE0CE7361EDDCA8E0075B110 /* LocationManager.swift */,
 			);
 			name = Permissions;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				97D62A151EC239D6007BE0CE /* ReviewCell.swift in Sources */,
 				97D629F01EC231C4007BE0CE /* YelpBusiness.swift in Sources */,
 				97D62A061EC233D8007BE0CE /* PermissionsController.swift in Sources */,
+				BE0CE7371EDDCA8E0075B110 /* LocationManager.swift in Sources */,
 				97D629FF1EC2332D007BE0CE /* Address.swift in Sources */,
 				97D62A171EC245BB007BE0CE /* ReviewCellViewModel.swift in Sources */,
 				97D629FD1EC23311007BE0CE /* YelpCategory.swift in Sources */,
