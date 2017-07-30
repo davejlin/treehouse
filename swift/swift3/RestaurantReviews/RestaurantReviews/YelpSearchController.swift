@@ -21,7 +21,20 @@ class YelpSearchController: UIViewController {
         return LocationManager(delegate: self, permissionsDelegate: nil)
     }()
     
-    var coordinate: Coordinate?
+    lazy var client: YelpClient = {
+        let yelpAccount = YelpAccount.loadFromKeychain()
+        let oauthToken = yelpAccount!.accessToken
+        
+        return YelpClient(oauthToken: oauthToken)
+    }()
+    
+    var coordinate: Coordinate? {
+        didSet {
+            if let coordinate = coordinate {
+                showNearbyRestaurants(at: coordinate)
+            }
+        }
+    }
     
     var isAuthorized: Bool {
         let isAuthorizedWithYelpToken = YelpAccount.isAuthorized
@@ -51,6 +64,18 @@ class YelpSearchController: UIViewController {
         self.tableView.delegate = self
     }
     
+    func showNearbyRestaurants(at coordinate: Coordinate) {
+        client.search(withTerm: "", at: coordinate) { [weak self] result in
+            switch result {
+            case .success(let businesses):
+                self?.dataSource.update(with: businesses)
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     // MARK: - Search
     
@@ -77,15 +102,27 @@ class YelpSearchController: UIViewController {
 
 // MARK: - UITableViewDelegate
 extension YelpSearchController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showBusiness", sender: nil)
+    }
 }
 
 // MARK: - Search Results
 extension YelpSearchController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let searchTerm = searchController.searchBar.text else { return }
+        guard let searchTerm = searchController.searchBar.text, let coordinate = coordinate else { return }
         
-        print("Search text: \(searchTerm)")
+        if !searchTerm.isEmpty {
+            client.search(withTerm: searchTerm, at: coordinate) { [weak self] result in
+                switch result {
+                case .success(let businesses):
+                    self?.dataSource.update(with: businesses)
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 }
 
