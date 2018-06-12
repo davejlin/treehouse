@@ -29,6 +29,7 @@ function getProfile(username) {
 	});
 }
 
-const users = ["davejlin", "chalkers", "alenaholligan", "davemcfarland"];
+//const users = ["davejlin", "chalkers", "alenaholligan", "davemcfarland"];
+const users = process.argv.slice(2);
 
 users.forEach(getProfile);
