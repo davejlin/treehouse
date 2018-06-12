@@ -21,10 +21,9 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
 	});
 
 	response.on('end', () => {
-		console.log(body);
-		console.log(typeof body);
+		// Parse the data
+		const profile = JSON.parse(body);
+		// Print the data
+		printMessage(username, profile.badges.length, profile.points.JavaScript);
 	});
-
-	// Parse the data
-	// Print the data
 });
