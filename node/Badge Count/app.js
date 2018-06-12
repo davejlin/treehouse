@@ -13,7 +13,18 @@ printMessage("testUser", 100, 2000000);
 // Connect to the API URL (https://teamtreahouse.com/username.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
 	console.log(`response status code = ${response.statusCode}`);
+	
+	let body = "";
 	// Read the data
+	response.on('data', data => {
+		body += data.toString();
+	});
+
+	response.on('end', () => {
+		console.log(body);
+		console.log(typeof body);
+	});
+
 	// Parse the data
 	// Print the data
 });
