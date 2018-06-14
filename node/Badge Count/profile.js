@@ -16,16 +16,16 @@ function get(username) {
 
 				response.on('end', () => {
 					try {
-					// Parse the data
-					const profile = JSON.parse(body);
-					// Print the data
-					printUtils.printMessage(username, profile.badges.length, profile.points.JavaScript);
+						// Parse the data
+						const profile = JSON.parse(body);
+						// Print the data
+						printUtils.printMessage(username, profile.badges.length, profile.points.JavaScript);
 					} catch (error) {
 						printError(error);
 					}
 				});
 			} else {
-				const message = `Error getting profile for ${username} (${response.statusCode} ${http.STATUS_CODES[response.statusCode]})`;
+				const message = `Failed getting profile for ${username} (${response.statusCode} ${http.STATUS_CODES[response.statusCode]})`;
 				const statusCodeError = new Error(message);
 				printUtils.printError(statusCodeError);
 			}

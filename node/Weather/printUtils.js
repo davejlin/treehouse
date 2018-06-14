@@ -3,8 +3,8 @@ function printError(error) {
 	console.error(`Error: ${error.message}`);
 }
 
-function printMessage(username, badgeCount, points) {
-	const message = `${username} has ${badgeCount} total badge(s) and ${points} points in JavaScript`;
+function printMessage(name, temp) {
+	const message = `The temperature in ${name} is ${temp}`;
 	console.log(message);
 }
 
