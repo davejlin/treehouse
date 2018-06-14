@@ -1,12 +1,11 @@
-http = require('http');
-https = require('https');
-printUtils = require('./printUtils');
-
-const apiKey = 'your api key here';
+const http = require('http');
+const https = require('https');
+const printUtils = require('./printUtils');
+const api = require('./api.json');
 
 function get(name) {
 	try {
-		const uri = `https://api.openweathermap.org/data/2.5/weather?zip=${name},us&units=imperial&appid=${apiKey}`;
+		const uri = `https://api.openweathermap.org/data/2.5/weather?zip=${name},us&units=imperial&appid=${api.key}`;
 		const request = https.get(uri, response => {
 			if (response.statusCode == 200) {
 			
