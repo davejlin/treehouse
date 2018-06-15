@@ -2,10 +2,27 @@ const http = require('http');
 const https = require('https');
 const printUtils = require('./printUtils');
 const api = require('./api.json');
+const querystring = require('querystring');
 
-function get(name) {
+function get(query) {
 	try {
-		const uri = `https://api.openweathermap.org/data/2.5/weather?zip=${name},us&units=imperial&appid=${api.key}`;
+
+		const parameters = {
+			appid: api.key,
+			units: 'imperial'
+		};
+
+		const zipCode = parseInt(query);
+		if (!isNaN(zipCode)) {
+			parameters.zip = zipCode + ',us';
+		} else {
+			parameters.q = query + ',us';
+		}
+
+
+		const uri = `https://api.openweathermap.org/data/2.5/weather?${querystring.stringify(parameters)}`;
+		console.log(uri);
+
 		const request = https.get(uri, response => {
 			if (response.statusCode == 200) {
 			
@@ -26,7 +43,7 @@ function get(name) {
 					}
 				});
 			} else {
-				const message = `Failed getting weather for ${name} (${response.statusCode} ${http.STATUS_CODES[response.statusCode]})`;
+				const message = `Failed getting weather for ${query} (${response.statusCode} ${http.STATUS_CODES[response.statusCode]})`;
 				const statusCodeError = new Error(message);
 				printUtils.printError(statusCodeError);
 			}

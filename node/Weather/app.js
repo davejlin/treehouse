@@ -1,4 +1,4 @@
 client = require('./client');
 
-const names = process.argv.slice(2);
-names.forEach(client.get);
+const query = process.argv.slice(2).join(' ');
+client.get(query);
