@@ -2,10 +2,8 @@ function executeCallback(callback) {
 	callback();
 }
  
-executeCallback(function () {
+executeCallback(() => {
     console.log('Hello');
 });
 
-executeCallback(function () {
-    console.log('Goodbye');
-});
+executeCallback(() => console.log('Goodbye'));
