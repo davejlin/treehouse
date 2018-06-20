@@ -6,4 +6,4 @@ function showSurprise() {
 
 const randomTime = Math.random() * 4000;
 
-setTimeout(showSurprise, randomTime);
+setTimeout( () => surpriseSection.textContent = '🎉 Surprise! 🎉' , randomTime);
