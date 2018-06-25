@@ -11,6 +11,14 @@ function makeBlue(element) {
     element.style.backgroundColor = "blue";
 }
 
+function makeGreen(element) {
+    element.style.backgroundColor = "green";
+}
+
 function addStyleToElement(element, callback) {
     callback(element);
 }
+
+addStyleToElement(div1, makeRed);
+addStyleToElement(div2, makeBlue);
+addStyleToElement(div3, makeGreen);
